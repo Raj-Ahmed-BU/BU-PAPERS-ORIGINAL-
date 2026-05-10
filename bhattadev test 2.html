@@ -1,0 +1,382 @@
+<!doctype html>
+<html>
+<head>
+    <title>Bhattadev Institute</title>
+
+    <!-- RESPONSIVE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #f1f5f9;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #0f7528;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 600;
+    color: #f9fcfd;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #e2e8f0;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: #38bdf8;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+/* Hamburger */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #020617;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* HEADER */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 25px 15px;
+    gap: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.class1 img {
+    width: 130px;
+    border-radius: 10%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* NEW TEXT STYLE */
+.class2 h1:first-child {
+    font-size: 20px;
+    color: #0f172a;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.class2 h1:nth-child(2) {
+    font-size: 26px;
+    color: rgb(183, 98, 8);
+    font-weight: 700;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    margin: 8px 0;
+}
+
+/* Underline effect */
+.class2 h1:nth-child(2)::after {
+    content: "";
+    width: 60%;
+    height: 3px;
+    background: #0f7528;
+    position: absolute;
+    left: 20%;
+    bottom: -6px;
+    border-radius: 2px;
+}
+
+.class2 h3 {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* MOBILE HEADER */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .class1 img {
+        width: 100px;
+    }
+
+    .class2 h1:first-child {
+        font-size: 16px;
+    }
+
+    .class2 h1:nth-child(2) {
+        font-size: 20px;
+    }
+
+    .class2 h3 {
+        font-size: 13px;
+    }
+}
+
+/* SUBJECTS */
+.subjects {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.subject-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+/* CARD */
+.subject-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+}
+
+/* BUTTON */
+.subject-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background: #0f7528;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .subject-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .subject-container {
+        grid-template-columns: 1fr;
+    }
+
+    .subject-btn {
+        width: 100%;
+    }
+}
+
+/* FOOTER */
+.footer {
+    background: #0f7528;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">BU Papers</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="bhattadev test 2.html">🏠 Home</a></li>
+        <li><a href="about test1.html">👤 About</a></li>
+        <li><a href="https://www.bhattadevuniversity.ac.in">🎓 University</a></li>
+        <li><a href="portfolio test1.html">💼 Portfolio</a></li>
+        <li><a href="contact test.html">📞 Contact</a></li>
+    </ul>
+
+    <div class="menu-toggle" onclick="toggleMenu()"><span style="color: white;">☰</span></div>
+</nav>
+
+<!-- HEADER -->
+<section>
+    <div class="container">
+        <div class="class1">
+            <img src="photos/logo_bu1-removebg-preview.png">
+        </div>
+
+        <div class="class2">
+            <h1>ভট্টদেৱ বিশ্ববিদ্যালয়, বজালী</h1>
+            <h1>BHATTADEV UNIVERSITY, BAJALI</h1>
+            <h3>Pathsala, Bajali, Assam</h3>
+        </div>
+    </div>
+</section>
+
+<!-- SUBJECTS -->
+<section class="subjects">
+    <h2>📚 Common Course</h2>
+
+    <div class="subject-container">
+
+         <div class="subject-card">
+            <h3>🌍 VAC</h3>
+            <a href="vac test1.html" class="subject-btn">Open </a>
+        </div>
+
+        <div class="subject-card">
+            <h3>🗣️ AEC</h3>
+            <a href="Aec test1.html" class="subject-btn">Open</a>
+        </div>
+
+        <div class="subject-card">
+            <h3>📖 IDC <Span style="color: red;">(Available soon)</Span></h3></h3>
+            <a href="" class="subject-btn">Open</a>
+        </div>
+
+    </div>
+</section>
+
+    <section class="subjects">
+    <h2>📚 Science</h2>
+
+    <div class="subject-container">
+
+
+        <div class="subject-card">
+            <h3>💻 Computer Science</h3>
+            <a href="com test1.html" class="subject-btn">Open</a>
+        </div>
+
+        <div class="subject-card">
+            <h3>📐 Mathematics</h3>
+            <a href="mathematics test1.html" class="subject-btn">Open</a>
+        </div>
+
+        <div class="subject-card">
+            <h3>⚛️ Physics</h3>
+            <a href="phy test1.html" class="subject-btn">Open</a>
+        </div>
+
+        <div class="subject-card">
+            <h3>🧪 Chemistry <Span style="color: red;">(Available soon)</Span></h3>
+            <a href="" class="subject-btn">Open</a>
+        </div>
+
+        <div class="subject-card">
+            <h3>🌿 Botany <Span style="color: red;">(Available soon)</Span></h3>
+            <a href="" class="subject-btn">Open</a>
+        </div>
+
+        <div class="subject-card">
+            <h3>🐾 Zoology</h3>
+            <a href="zoology test 1.html" class="subject-btn">Open</a>
+        </div>
+
+    </div>
+</section>
+
+    <section class="subjects">
+    <h2>📚 Arts</h2>
+
+    <div class="subject-container">
+
+
+        <div class="subject-card">
+            <h3>⚖️ Political Science</h3>
+            <a href="political.html" class="subject-btn">Open</a>
+        </div>
+
+        <div class="subject-card">
+            <h3>👨🏻‍🎓 Education</h3>
+            <a href="education.html" class="subject-btn">Open</a>
+        </div>
+
+        <div class="subject-card">
+            <h3>🏛️History</h3>
+            <a href="History.html" class="subject-btn">Open</a>
+        </div>
+
+        <div class="subject-card">
+            <h3>🦏 Assamese</h3>
+            <a href="Assamese.html" class="subject-btn">Open</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© Bhattadev University | Developed by Raj Ahmed 🚀</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
